@@ -1,13 +1,11 @@
-import React from "react";
-
 const IpResult = ({ data }) => {
   const DataPiece = ({ label, data, pre }) => {
     const hasBorder = ["isp", "location", "timezone"].includes(label);
     const obj = typeof data === "object";
     return (
-      <div className="self-start sm:flex sm:gap-10">
+      <div className="sm:flex items-start h-full">
         {hasBorder ? (
-          <span className="max-md:hidden h-5 w-[1px] bg-justDark"></span>
+          <span className="max-lg:hidden lg:mr-10 h-5 w-[1px] bg-justDark self-center"></span>
         ) : null}
         <div id={label} className={`text-center sm:text-left px-2.5 `}>
           <h2 className="font-medium text-justDark uppercase max-xs:text-[0.7em] text-[0.8em] ">
@@ -26,12 +24,11 @@ const IpResult = ({ data }) => {
   return (
     <div
       id="ip-result"
-      className={`bg-white shadow-2xl rounded-2xl w-[80%] min-[850px]:min-h-44 min-[850px]:-my-22  py-8 sm:py-10 max-[850px]:absolute md:max-[850px]:top-[23%] sm:max-md:top-[25%] top-[23%] z-[999] `}
-    //   style={{ zIndex: 999 }}
+      className={`bg-white shadow-2xl rounded-2xl w-4/5  py-8 sm:py-10 absolute md:max-[850px]:top-[23%] sm:max-md:top-[25%] top-[23%] z-[999] `}
     >
       <div
         id="results-wrapper"
-        className="sm:px-10 grid grid-cols-1 grid-rows-4 sm:max-md:grid-rows-2 sm:max-md:grid-cols-2 md:grid-rows-1 md:grid-cols-4  place-items-center sm:place-content-evenly max-sm:gap-y-4"
+        className="sm:px-10 grid grid-cols-1 sm:max-lg:grid-cols-2 lg:grid-cols-4 gap-4 place-items-start max-sm:place-items-center sm:place-content-evenly max-sm:gap-y-4"
       >
         <DataPiece label="ip address" data={data.ip} />
         <DataPiece label="location" data={data.location} />

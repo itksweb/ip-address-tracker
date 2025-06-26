@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import MyMap from "./components/MyMap";
 import Header from "./components/Header";
-const apiKey = import.meta.env.VITE_IPIFY_API_KEY;
 import { ipAddressRegex, domainNameRegex, getData } from "./utils";
 import IpResult from "./components/IpResult";
+const apiKey = import.meta.env.VITE_IPIFY_API_KEY;
 
-function App() {
+const App = () => {
   const [userInput, setUserInput] = useState("");
   const [data, setData] = useState({});
 
@@ -46,28 +46,6 @@ function App() {
     }
   };
   const handleInputChange = (e) => setUserInput(e.target.value);
-
-  const DataPiece = ({ label, data, pre }) => {
-    const hasBorder = ["isp", "location", "timezone"].includes(label);
-    const obj = typeof data === "object";
-    return (
-      <div className="self-start sm:flex sm:gap-10">
-        {hasBorder ? (
-          <span className="max-md:hidden h-5 w-[1px] bg-justDark"></span>
-        ) : null}
-        <div id={label} className={`text-center sm:text-left px-2.5 `}>
-          <h2 className="font-medium text-justDark uppercase max-xs:text-[0.7em] text-[0.8em] ">
-            {label}
-          </h2>
-          <p className="font-medium text-veryDark lg:text-2xl md:max-lg:text-xl text-lg ">
-            {pre ? `${pre} ` : null}
-            {obj ? `${data?.city}, ${data?.region}` : data}
-          </p>
-          {obj ? <p>{data?.postalCode}</p> : null}
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className=" min-h-[100vh] flex flex-col justify-start items-center w-full relative ">

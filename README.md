@@ -52,8 +52,28 @@ Users should be able to:
 ### What I learned
 
 
-```js
-
+```jsx
+const DataPiece = ({ label, data, pre }) => {
+    const hasBorder = ["isp", "location", "timezone"].includes(label);
+    const obj = typeof data === "object";
+    return (
+      <div className="sm:flex items-start h-full">
+        {hasBorder ? (
+          <span className="max-lg:hidden lg:mr-10 h-5 w-[1px] bg-justDark self-center"></span>
+        ) : null}
+        <div id={label} className={`text-center sm:text-left px-2.5 `}>
+          <h2 className="font-medium text-justDark uppercase max-xs:text-[0.7em] text-[0.8em] ">
+            {label}
+          </h2>
+          <p className="font-medium text-veryDark lg:text-2xl md:max-lg:text-xl text-lg ">
+            {pre ? `${pre} ` : null}
+            {obj ? `${data?.city}, ${data?.region}` : data}
+          </p>
+          {obj ? <p>{data?.postalCode}</p> : null}
+        </div>
+      </div>
+    );
+  };
 ```
 
 ### Useful resources
