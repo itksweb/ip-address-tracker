@@ -1,6 +1,7 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# Frontend Mentor - IP address tracker
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+ 
 
 
 ## Table of contents
@@ -22,12 +23,11 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 Users should be able to:
 
-- See all countries from the API on the homepage
-- Search for a country using an `input` field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See their own IP address on the map on the initial page load
+- Search for any IP addresses or domains and see the key information and location
+
 
 
 ### Screenshot
@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL](https://github.com/itksweb/rest-countries/)
-- Live Site URL: [live site URL](https://rest-countries-rose-alpha.vercel.app/)
+- Solution URL: [solution URL](https://github.com/itksweb/ip-address-tracker)
+- Live Site URL: [live site URL](https://ip-address-tracker-delta-seven.vercel.app/)
 
 ## My process
 
@@ -57,7 +57,8 @@ Users should be able to:
 ```
 
 ### Useful resources
-
+ - [IP Geolocation API by IPify](https://geo.ipify.org/)
+ - [LeafletJS](https://leafletjs.com/)
 
 
 
@@ -65,5 +66,6 @@ Users should be able to:
 
 - WhatsApp - [here](https://wa.me/2348060719978)
 - LinkedIn - [here](https://www.linkedin.com/in/kingsleyikpefan)
+- Frontend Mentor - [here](https://www.frontendmentor.io/itksweb)
 
 

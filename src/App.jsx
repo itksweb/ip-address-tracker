@@ -94,7 +94,10 @@ function App() {
           <DataPiece label="isp" data={data.isp} />
         </div>
       </div>
-      <Map2 marker={[data?.location?.lat, data?.location?.lng]} />
+      <Map2
+        marker={[data?.location?.lat, data?.location?.lng]}
+        loc={data?.location}
+      />
     </div>
   );
 }
