@@ -3,10 +3,11 @@ import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-const Map2 = ({ marker, loc }) => {
+const MyMap = ({ marker, loc }) => {
   const customIcon = new L.Icon({
     iconUrl: "/assets/images/icon-location.svg",
-    iconAnchor: marker,
+    iconSize: [35, 46],
+    iconAnchor: [17, 46],
   });
   const marked =
     marker &&
@@ -42,4 +43,4 @@ const Map2 = ({ marker, loc }) => {
   );
 };
 
-export default Map2;
+export default MyMap;

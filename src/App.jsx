@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import Map2 from "./components/Map2";
+import MyMap from "./components/MyMap";
 import Header from "./components/Header";
 const apiKey = import.meta.env.VITE_IPIFY_API_KEY;
 import { ipAddressRegex, domainNameRegex, getData } from "./utils";
+import IpResult from "./components/IpResult";
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -75,26 +76,8 @@ function App() {
         userInput={userInput}
         handleSubmit={handleSubmit}
       />
-      <div
-        id="ip-result"
-        className={`bg-white shadow-2xl rounded-2xl w-[80%] min-[850px]:min-h-44 min-[850px]:-my-22  py-8 sm:py-10 max-[850px]:absolute md:max-[850px]:top-[23%] sm:max-md:top-[25%] top-[23%] `}
-        style={{ zIndex: 999 }}
-      >
-        <div
-          id="results-wrapper"
-          className="sm:px-10 grid grid-cols-1 grid-rows-4 sm:max-md:grid-rows-2 sm:max-md:grid-cols-2 md:grid-rows-1 md:grid-cols-4  place-items-center sm:place-content-evenly max-sm:gap-y-4"
-        >
-          <DataPiece label="ip address" data={data.ip} />
-          <DataPiece label="location" data={data.location} />
-          <DataPiece
-            label="timezone"
-            data={data?.location?.timezone}
-            pre="UTC"
-          />
-          <DataPiece label="isp" data={data.isp} />
-        </div>
-      </div>
-      <Map2
+      <IpResult data={data} />
+      <MyMap
         marker={[data?.location?.lat, data?.location?.lng]}
         loc={data?.location}
       />
