@@ -3,7 +3,11 @@ import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+//This is my first time developing with leafletjs and react-leaflet
+// so almost everything here (below) is new to me
+
 const MyMap = ({ marker, loc }) => {
+
   const customIcon = new L.Icon({
     iconUrl: "/assets/images/icon-location.svg",
     iconSize: [35, 46],
