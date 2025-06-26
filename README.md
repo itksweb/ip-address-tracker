@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 
 
@@ -74,6 +74,21 @@ const DataPiece = ({ label, data, pre }) => {
       </div>
     );
   };
+
+  useEffect(() => {
+    const fetchUserIp = async () => {
+      const storedData = localStorage.getItem("data");
+      if (!storedData) {
+        const data = await getData(url);
+        console.log("foreign data");
+        localStorage.setItem("data", JSON.stringify(data));
+        return setData({ ...data });
+      }
+      setData(JSON.parse(storedData));
+      console.log("local data");
+    };
+    fetchUserIp();
+  }, []);
 ```
 
 ### Useful resources
